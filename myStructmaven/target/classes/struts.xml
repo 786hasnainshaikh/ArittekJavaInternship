@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="default"  extends="struts-default"> 
+
+   <action name="login"  class="myStructmaven.model.user" method="getAllStudents">
+      <result name="success">views/home.jsp</result>
+   </action>
+   
+   <action name="register"  class="myStructmaven.RegisterBean.bean" method="addStudent">
+      <result name="success" type="redirectAction">login.action</result>
+      <result name="fail">views/failPage.jsp</result>
+      
+   </action>
+   
+   <action name="deleteStudent" class="myStructmaven.actions.deleteAction" method="deleteStudent">
+      <result name="success" type="redirectAction">login.action</result>
+      <result name="fail">views/failPage.jsp</result>
+  </action>
+  
+  
+   <action name="updateData" class="myStructmaven.actions.updateAction" method="updateStudent">
+      <result name="success" type="redirectAction">login.action</result> 
+     <result name="fail">views/failPage.jsp</result>
+  </action>
+ 
+</package>
+
+</struts>
